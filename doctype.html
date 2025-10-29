@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Опрос: Готовность к переходу на Linux и свободное ПО</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+        }
+        .section {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        h2 {
+            color: #3498db;
+            margin-bottom: 15px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        input[type="text"], input[type="email"], textarea, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #bdc3c7;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .option {
+            display: flex;
+            align-items: center;
+        }
+        .option input {
+            margin-right: 10px;
+        }
+        .btn-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .note {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+        .required {
+            color: #e74c3c;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Опрос о готовности к переходу на Linux и свободное ПО</h1>
+        <p class="subtitle">Помогите нам понять вашу готовность к использованию свободного программного обеспечения</p>
+        
+        <div class="note">
+            <p><strong>Примечание:</strong> Этот опрос проводится с целью изучения готовности пользователей к переходу на свободное программное обеспечение. Переход на любую операционную систему или программное обеспечение должен быть добровольным и осознанным решением каждого пользователя.</p>
+        </div>
+        
+        <form id="survey-form">
+            <!-- Блок информации о пользователе -->
+            <div class="section">
+                <h2>Информация о вас</h2>
+                
+                <div class="question">
+                    <label for="experience">Ваш уровень компьютерной грамотности:</label>
+                    <select id="experience" name="experience" required>
+                        <option value="" disabled selected>Выберите вариант</option>
+                        <option value="beginner">Начинающий пользователь</option>
+                        <option value="intermediate">Опытный пользователь</option>
+                        <option value="advanced">Продвинутый пользователь</option>
+                        <option value="expert">Эксперт/IT-специалист</option>
+                    </select>
+                </div>
+                
+                <div class="question">
+                    <label for="profession">Ваша сфера деятельности:</label>
+                    <input type="text" id="profession" name="profession" placeholder="Например: бухгалтер, программист, студент...">
+                </div>
+            </div>
+            
+            <!-- Блок текущего использования ПО -->
+            <div class="section">
+                <h2>Текущее использование программного обеспечения</h2>
+                
+                <div class="question">
+                    <label>Какие операционные системы вы используете регулярно? <span class="required">*</span></label>
+                    <div class="options">
+                        <div class="option">
+                            <input type="checkbox" id="windows" name="os" value="windows">
+                            <label for="windows">Microsoft Windows</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="macos" name="os" value="macos">
+                            <label for="macos">macOS</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="linux" name="os" value="linux">
+                            <label for="linux">Linux (любой дистрибутив)</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="other_os" name="os" value="other">
+                            <label for="other_os">Другая ОС</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <label>Какие офисные пакеты вы используете? <span class="required">*</span></label>
+                    <div class="options">
+                        <div class="option">
+                            <input type="checkbox" id="msoffice" name="office" value="msoffice">
+                            <label for="msoffice">Microsoft Office</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="libreoffice" name="office" value="libreoffice">
+                            <label for="libreoffice">LibreOffice</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="openoffice" name="office" value="openoffice">
+                            <label for="openoffice">Apache OpenOffice</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="google_docs" name="office" value="google_docs">
+                            <label for="google_docs">Google Docs/Workspace</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="other_office" name="office" value="other">
+                            <label for="other_office">Другой офисный пакет</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Блок готовности к переходу -->
+            <div class="section">
+                <h2>Готовность к переходу на свободное ПО</h2>
+                
+                <div class="question">
+                    <label for="willingness">Насколько вы готовы рассмотреть переход на Linux и свободное ПО? <span class="required">*</span></label>
+                    <select id="willingness" name="willingness" required>
+                        <option value="" disabled selected>Выберите вариант</option>
+                        <option value="very_willing">Очень готов, хочу перейти</option>
+                        <option value="somewhat_willing">Готов рассмотреть при определенных условиях</option>
+                        <option value="neutral">Нейтрален, не вижу преимуществ</option>
+                        <option value="somewhat_unwilling">Скорее не готов к переходу</option>
+                        <option value="very_unwilling">Абсолютно не готов к переходу</option>
+                    </select>
+                </div>
+                
+                <div class="question">
+                    <label>Что является основным препятствием для перехода на Linux? (можно выбрать несколько)</label>
+                    <div class="options">
+                        <div class="option">
+                            <input type="checkbox" id="compatibility" name="obstacles" value="compatibility">
+                            <label for="compatibility">Несовместимость с необходимым ПО</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="familiarity" name="obstacles" value="familiarity">
+                            <label for="familiarity">Привычка к текущей ОС</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="support" name="obstacles" value="support">
+                            <label for="support">Отсутствие технической поддержки</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="gaming" name="obstacles" value="gaming">
+                            <label for="gaming">Ограничения для игр</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="knowledge" name="obstacles" value="knowledge">
+                            <label for="knowledge">Недостаток знаний о Linux</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="no_obstacles" name="obstacles" value="no_obstacles">
+                            <label for="no_obstacles">Нет препятствий</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="question">
+                    <label>Какие преимущества свободного ПО для вас наиболее значимы? (можно выбрать несколько)</label>
+                    <div class="options">
+                        <div class="option">
+                            <input type="checkbox" id="free" name="advantages" value="free">
+                            <label for="free">Бесплатность</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="open_source" name="advantages" value="open_source">
+                            <label for="open_source">Открытый исходный код</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="security" name="advantages" value="security">
+                            <label for="security">Безопасность</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="customization" name="advantages" value="customization">
+                            <label for="customization">Гибкость и настраиваемость</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="privacy" name="advantages" value="privacy">
+                            <label for="privacy">Конфиденциальность</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="community" name="advantages" value="community">
+                            <label for="community">Поддержка сообщества</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Блок отношения к принудительному переходу -->
+            <div class="section">
+                <h2>Отношение к переходу на свободное ПО</h2>
+                
+                <div class="question">
+                    <label for="forced_transition">Как вы относитесь к принудительному переходу на свободное ПО в организации? <span class="required">*</span></label>
+                    <select id="forced_transition" name="forced_transition" required>
+                        <option value="" disabled selected>Выберите вариант</option>
+                        <option value="strongly_support">Полностью поддерживаю</option>
+                        <option value="somewhat_support">Скорее поддерживаю</option>
+                        <option value="neutral">Нейтрально</option>
+                        <option value="somewhat_oppose">Скорее против</option>
+                        <option value="strongly_oppose">Категорически против</option>
+                    </select>
+                </div>
+                
+                <div class="question">
+                    <label for="transition_conditions">При каких условиях вы бы поддержали переход организации на свободное ПО?</label>
+                    <textarea id="transition_conditions" name="transition_conditions" placeholder="Например: при наличии обучения, технической поддержки, совместимости с текущими процессами..."></textarea>
+                </div>
+            </div>
+            
+            <!-- Блок дополнительной информации -->
+            <div class="section">
+                <h2>Дополнительная информация</h2>
+                
+                <div class="question">
+                    <label for="comments">Ваши комментарии или предложения:</label>
+                    <textarea id="comments" name="comments" placeholder="Здесь вы можете оставить любые дополнительные мысли..."></textarea>
+                </div>
+                
+                <div class="question">
+                    <label for="email">Email (если хотите получить результаты опроса):</label>
+                    <input type="email" id="email" name="email" placeholder="Ваш email">
+                </div>
+            </div>
+            
+            <div class="btn-container">
+                <button type="submit">Отправить ответы</button>
+            </div>
+        </form>
+        
+        <div class="note">
+            <p><strong>Ответ на ваш вопрос о корректности опроса:</strong> Проведение опроса для оценки готовности пользователей к переходу на свободное ПО является корректным и этичным подходом. Принудительный переход без учета мнения и готовности пользователей может привести к снижению продуктивности, сопротивлению изменениям и другим негативным последствиям. Рекомендуется проводить постепенный переход с обучением и поддержкой, учитывая индивидуальные потребности пользователей.</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('survey-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Спасибо за участие в опросе! Ваши ответы помогут лучше понять готовность пользователей к переходу на свободное ПО.');
+            // В реальном приложении здесь был бы код для отправки данных на сервер
+            this.reset();
+        });
+    </script>
+</body>
+</html>

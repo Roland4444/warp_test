@@ -37,6 +37,7 @@ library
       async
     , base >=4.7 && <5
     , bytestring
+    , case-insensitive
     , directory
     , http-types
     , random
@@ -62,6 +63,7 @@ executable warp-hello-world-exe
       async
     , base >=4.7 && <5
     , bytestring
+    , case-insensitive
     , directory
     , http-types
     , random
@@ -89,6 +91,7 @@ test-suite warp-hello-world-test
       async
     , base >=4.7 && <5
     , bytestring
+    , case-insensitive
     , directory
     , hspec
     , http-types
