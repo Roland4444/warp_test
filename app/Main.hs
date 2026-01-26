@@ -82,9 +82,9 @@ app request respond
     | otherwise = plainApp request respond
   where
     cstmApp :: Wai.Application
-    cstmApp _ respond = respond $ 
-        Wai.responseLBS status404 [(hContentType, "text/plain")] 
-        (pack "CUSTOM ROUTE")
+    cstmApp _ respond = do 
+        putStrLn "CUSTOM ROUTE CALLED:#####88888888888888888888888"
+        respond $ Wai.responseLBS status404 [(hContentType, "text/plain")]        (pack "CUSTOM ROUTE  444444444444444444444#######")
     
     plainApp :: Wai.Application
     plainApp _ respond = respond $ 
@@ -677,6 +677,6 @@ logMessage handle message = do
 --     rps: 535755.7 requests per sec
 
 
-
+--"C:\Program Files (x86)\Winrk\winrk" http://localhost:8080/hello/web -t 12 -d 30 -c 400
 
 --   ")
