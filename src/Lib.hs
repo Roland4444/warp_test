@@ -1,5 +1,5 @@
 module Lib
-    ( someFunc, summ, get_pass_via_email
+    ( someFunc, summ, get_pass_via_email, token
     ) where
 
 import Data.List (isInfixOf)
@@ -32,6 +32,12 @@ filterAndGetLastWordSafe pattern strings =
             [] -> Nothing
             ws -> Just $ last ws     
 
+
+readWholeFile :: FilePath -> IO String
+readWholeFile path = readFile path
+
+token :: IO String
+token = readWholeFile "TOKEN"
     
 
   

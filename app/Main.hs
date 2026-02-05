@@ -54,13 +54,40 @@ import qualified Data.Text.Encoding as TE
 import qualified Data.ByteString.Lazy as LBS
 import qualified Data.ByteString.Char8 as BS8
 import System.Directory (doesFileExist)
-import Network.HTTP.Types (status200, status400, status404, hContentType, methodGet, methodPost)
+import Network.HTTP.Types (status200, status400, status404, status401, hContentType, methodGet, methodPost)
 import Data.ByteString.Lazy.Char8 (pack)
 import Data.CaseInsensitive (original)
-import Lib (get_pass_via_email)
+import Lib (get_pass_via_email, token)
+
+import Data.UUID (toString)
+import Data.UUID.V1 (nextUUID)
+import Data.UUID.V4 (nextRandom)
+import System.IO (writeFile, appendFile, hFlush, stdout)
+import Control.Monad (replicateM_)
+import Control.Concurrent (threadDelay)
+import Data.Maybe (fromJust)
+
+
+gen_UUID :: IO ()
+gen_UUID = do 
+    putStrLn "Generating 100 time-based UUIDs..."
+    writeFile "guuids.txt" ""
+    replicateM_ 100 $ do
+        currentTime <- getCurrentTime
+        let timeStr = formatTime defaultTimeLocale "%Y-%m-%d %H:%M:%S" currentTime
+        maybeUuid <- nextUUID
+        let uuidStr = case maybeUuid of
+                Just uuid -> toString uuid
+                Nothing -> "Error generating UUID"
+        let output = uuidStr
+        appendFile "guuids.txt" (output ++ "\n")
+        putStrLn output
+        threadDelay 1000  -- 1 миллисекунда    
+    putStrLn "\nDone! 100 UUIDs written to 'guuids.txt'"
 
 main :: IO ()
 main = do
+    gen_UUID
     get_pass_via_email  "xxxx"
     putStrLn "WebSocket server running on ws://localhost:11111/"
     putStrLn "Open http://localhost:11111/ in your browser to test WebSocket connection"
@@ -88,15 +115,25 @@ app request respond
     getPassApp req respond = do
         let queryParams = Wai.queryString req
             maybeEmail = lookup "email" queryParams
+            maybeToken = lookup "token" queryParams
+
+        envToken <- token  -- убедитесь, что 'token' это IO действие
+    
+        case (maybeEmail, maybeToken) of
+            (Just (Just emailBS), Just (Just tokenBS)) -> 
+                 if tokenBS == BS8.pack envToken
+                    then do
+                         password <- get_pass_via_email (BS8.unpack emailBS)
+                         respond $ Wai.responseLBS status200 
+                              [(hContentType, "text/html")] 
+                              (pack password)
+                    else respond $ Wai.responseLBS status401 
+                             [(hContentType, "text/plain")] 
+                             (pack "Invalid token")
         
-        case maybeEmail of
-            Just (Just emailBS) -> 
-                respond . Wai.responseLBS status200 [(hContentType, "text/html")] . pack 
-                    =<< get_pass_via_email (BS8.unpack emailBS)
-            
             _ -> respond $ Wai.responseLBS status400 
-                    [(hContentType, "text/html")] 
-                    (pack "No email parameter")
+                [(hContentType, "text/plain")] 
+                (pack "Missing email or token parameter")
 
     cstmApp :: Wai.Application
     cstmApp _ respond = do 
