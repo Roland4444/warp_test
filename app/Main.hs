@@ -54,7 +54,7 @@ import qualified Data.Text.Encoding as TE
 import qualified Data.ByteString.Lazy as LBS
 import qualified Data.ByteString.Char8 as BS8
 import System.Directory (doesFileExist)
-import Network.HTTP.Types (status200, status404, hContentType, methodGet, methodPost)
+import Network.HTTP.Types (status200, status400, status404, hContentType, methodGet, methodPost)
 import Data.ByteString.Lazy.Char8 (pack)
 import Data.CaseInsensitive (original)
 import Lib (get_pass_via_email)
@@ -80,9 +80,24 @@ app request respond
     | Wai.pathInfo request == [] = serveHtmlPage request respond
     | Wai.pathInfo request == ["custom"] = cstmApp request respond
     | Wai.pathInfo request == ["help"] = helpApp request respond
+    | Wai.pathInfo request == ["getpass"] = getPassApp request respond
     | Wai.pathInfo request == ["parse"] = parseReq request respond
     | otherwise = plainApp request respond
   where
+    getPassApp :: Wai.Application
+    getPassApp req respond = do
+        let queryParams = Wai.queryString req
+            maybeEmail = lookup "email" queryParams
+        
+        case maybeEmail of
+            Just (Just emailBS) -> 
+                respond . Wai.responseLBS status200 [(hContentType, "text/html")] . pack 
+                    =<< get_pass_via_email (BS8.unpack emailBS)
+            
+            _ -> respond $ Wai.responseLBS status400 
+                    [(hContentType, "text/html")] 
+                    (pack "No email parameter")
+
     cstmApp :: Wai.Application
     cstmApp _ respond = do 
         putStrLn "CUSTOM ROUTE CALLED:#####88888888888888888888888"
