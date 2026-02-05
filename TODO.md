@@ -394,343 +394,524 @@ curl -X POST "https://ваш-домен.bitrix24.ru/rest/1/вебхук/timeman.
   -d "DATE_START=2024-01-01"
 
 
-
-
-
-ШЕВЧЕНКО
-
-├─────────────┬───────────────────────────────────────────────┤
-│ Слой        │ Технологии (в порядке предпочтения)           │
-├─────────────┼───────────────────────────────────────────────┤
-│ Frontend    │ 1. SvelteKit (практичность + инновация)       │
-│             │ 2. Solid.js (глубокая реактивность)           │
-│             │ 3. Vanilla TS + htmx (максимальный контроль)  │
-├─────────────┼───────────────────────────────────────────────┤
-│ Backend     │ 1. Rust (Axum) для критичных сервисов         │
-│ (API/Logic) │ 2. Haskell (Servant) для доменной чистоты     │
-│             │ 3. Go (Gin) для высоконагруженных API         │
-│             │ 4. Elixir (Phoenix) для real-time             │
-├─────────────┼───────────────────────────────────────────────┤
-│ События &   │ 1. Apache Kafka (ядро событийной системы)     │
-│ Сообщения   │ 2. RabbitMQ (для рабочих очередей)            │
-│             │ 3. Redis (pub/sub, кэш)                       │
-├─────────────┼───────────────────────────────────────────────┤
-│ Данные      │ 1. PostgreSQL (основное хранилище)            │
-│             │ 2. Redis (кэш, сессии, быстрые данные)        │
-│             │ 3. Cassandra (масштабируемое хранилище событий)│
-│             │ 4. Neo4j (для графовых связей)                │
-├─────────────┼───────────────────────────────────────────────┤
-│ Методология │ Event-Driven Architecture (EDA) +             │
-│             │ Domain-Driven Design (DDD) +                  │
-│             │ Event Sourcing/CQRS (для сложных доменов) +   │
-│             │ Property-Based Testing (Haskell/Elixir)   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Спикеры по ключевым технологиям для вашего стека
-1. Event-Driven Architecture (EDA) + Event Sourcing
-Международные:
-Greg Young — создатель CQRS, Event Sourcing; автор "Event Sourcing" книги
-
-Резонанс с вами: Технократичный, структурный подход к EDA (Козерог)
-
-Ключевое выступление: "The Art of Destroying Software"
-
-Martin Fowler — автор статей о EDA, CQRS
-
-Резонанс: Баланс теории и практики (Близнецы + Козерог)
-
-Статья: "What do you mean by 'Event-Driven'?"
-
-Alberto Brandolini — создатель Event Storming
-
-Резонанс: Визуальное мышление о событиях (Нептун + Близнецы)
-
-Книга: "EventStorming"
-
-Udi Dahan — создатель NServiceBus, эксперт по распределённым системам
-
-Резонанс: Прагматичный подход к сложным системам (Плутон + Козерог)
-
-Kenny Baas-Schwegler — практик Event Storming, DDD
-
-Резонанс: Сочетание глубины и доступности
-
-Русскоязычные:
-Тимур Шемсединов — Event-Driven Architecture на практике
-
-Алексей Бармишин — DDD и event-driven системы
-
-Артём Кобзев — практический опыт построения EDA
-
-2. Domain-Driven Design (DDD)
-Основоположники:
-Eric Evans — автор книги "Domain-Driven Design: Tackling Complexity in the Heart of Software"
-
-Резонанс: Глубина понимания домена (Плутон в Скорпионе)
-
-Vaughn Vernon — автор "Implementing Domain-Driven Design", "Domain-Driven Design Distilled"
-
-Резонанс: Структурный, практический подход (Козерог)
-
-Практики:
-Scott Millett — соавтор "Patterns, Principles, and Practices of Domain-Driven Design"
-
-Nick Tune — стратегический DDD, Team Topologies
-
-Резонанс с 9 домом: Масштабирование DDD на большие организации
-
-Русскоязычные:
-Владимир Хориков — автор "Unit-тестирование" и материалов по DDD
-
-Сергей Грибков — практический DDD в .NET
-
-3. Property-Based Testing (PBT)
-Пионеры:
-John Hughes — соавтор QuickCheck (Erlang/Haskell), автор PropEr
-
-Резонанс: Академическая глубина + практичность (Плутон + Козерог)
-
-Ключевое выступление: "Testing the Hard Stuff and Staying Sane"
-
-Koen Claessen — соавтор QuickCheck
-
-Популяризаторы:
-Scott Wlaschin — автор "Domain Modeling Made Functional", объясняет PBT на F#
-
-Резонанс: Ясное объяснение сложных концепций (Близнецы)
-
-Сайт: fsharpforfunandprofit.com
-
-Jessica Kerr — объясняет PBT на примерах из реального мира
-
-Резонанс: Практичность + теория
-
-Fred Hebert — автор "Property-Based Testing with PropEr, Erlang, and Elixir"
-
-Резонанс: Практический подход к PBT в production
-
-4. Data-Oriented Design (DOD)
-Основные:
-Mike Acton — бывший ведущий инженер Insomniac Games, автор "Data-Oriented Design"
-
-Резонанс: Агрессивный, бескомпромиссный подход к производительности (Марс в Овне)
-
-Легендарное выступление: "Data-Oriented Design and C++"
-
-Andrew Kelley — создатель языка Zig, пропагандист DOD
-
-Резонанс: Системный подход (Козерог), инновации (Уран)
-
-Jonathan Blow — создатель игр Braid, The Witness, автор языка Jai
-
-Резонанс: Глубокое понимание систем (Плутон)
-
-Практики:
-Stoyan Nikolov — DOD в играх и high-performance computing
-
-Bobby Anguelov — DOD в AAA играх
-
-5. CQRS + Event Sourcing
-Эксперты:
-Greg Young (уже упомянут) — основной спикер
-
-Jérémie Chassaing — практик CQRS/ES в .NET
-
-Derek Comartin — практические видео по CQRS/ES
-
-Chris Richardson — микросервисы + CQRS
-
-Книга: "Microservices Patterns"
-
-6. Functional Programming + Architecture
-Для Haskell/FP:
-Simon Peyton Jones — разработчик Glasgow Haskell Compiler
-
-Резонанс: Глубина + ясность (Плутон + Близнецы)
-
-Edward Kmett — библиотеки lens, profunctors
-
-Резонанс: Экстремальная глубина абстракций (Плутон в Скорпионе)
-
-Для F#:
-Scott Wlaschin (уже упомянут)
-
-Don Syme — создатель F#
-
-Isaac Abraham — автор "Get Programming with F#"
-
-Для Clojure:
-Rich Hickey — создатель Clojure, автор "Simple Made Easy"
-
-Резонанс: Глубина мысли (Плутон), ясность выражения (Близнецы)
-
-Stuart Halloway — сооснователь Cognitect, автор "Programming Clojure"
-
-7. Rust + Systems Programming
-Core team:
-Steve Klabnik — соавтор книги "The Rust Programming Language"
-
-Резонанс: Отличный учитель (Близнецы)
-
-Carol Nichols — соавтор книги по Rust
-
-Niko Matsakis — работа над системой владения Rust
-
-Резонанс: Глубокое понимание систем (Плутон)
-
-Практики:
-Jon Gjengset — автор YouTube-канала о продвинутом Rust
-
-Резонанс: Подробные, глубокие объяснения (Плутон + Козерог)
-
-Ryan Levick — Microsoft, Rust в production
-
-8. Reactive Programming + Reactive Systems
-Эксперты:
-Jonas Bonér — создатель Akka, автор реактивных манифестов
-
-Резонанс: Системное мышление (Козерог)
-
-Roland Kuhn — соавтор "Reactive Design Patterns"
-
-Martin Thompson — high-performance computing, mechanical sympathy
-
-Резонанс: Глубина понимания hardware (Плутон)
-
-9. Software Architecture
-Методологии:
-Robert C. Martin (Uncle Bob) — Clean Architecture, SOLID
-
-Резонанс: Структурный подход (Козерог)
-
-Mark Richards — автор "Software Architecture Patterns"
-
-Neal Ford — архитектура, evolutionary architecture
-
-Резонанс: Баланс структуры и адаптивности (Козерог + Близнецы)
-
-10. Русскоязычное сообщество
-DDD/EDA:
-Тимур Шемсединов — Event-Driven Architecture
-
-Алексей Бармишин — DDD, микросервисы
-
-Владимир Хориков — DDD, тестирование
-
-Антон Семенченко — CQRS/Event Sourcing на практике
-
-Rust/Systems:
-Андрей Листопадов — Rust, системы реального времени
-
-Михаил Панков — Rust в production
-
-FP:
-Роман Чепляка — F#, функциональное программирование
-
-Александр Гранин — Haskell, зависимые типы
-
-Как изучать системно (по вашим аспектам):
-Фаза 1: Наблюдение (Нептун ретроградный)
-Смотрите выступления без цели сразу применять
-
-Greg Young → "The Art of Destroying Software"
-
-Rich Hickey → "Simple Made Easy"
-
-John Hughes → "Testing the Hard Stuff"
-
-Состояние: Как слушаете музыку — воспринимаете паттерны
-
-Фаза 2: Структурирование (Козерог)
-Читайте книги по порядку:
-
-"Domain-Driven Design" → Evans
-
-"Implementing Domain-Driven Design" → Vernon
-
-"Event Storming" → Brandolini
-
-Создайте карту знаний с связями между концепциями
-
-Фаза 3: Глубинная практика (Плутон)
-Выберите один проект для глубокого погружения
-
-Примените все методики к одному домену
-
-Рефакторите несколько раз, углубляя понимание
-
-Фаза 4: Коммуникация (Близнецы)
-Напишите статьи о своём опыте
-
-Сделайте доклад в локальном сообществе
-
-Обсудите с другими практиками
-
-Ключевые выступления для старта:
-День 1-7: Видение
-Rich Hickey — "Simple Made Easy" (пересмотр базовых понятий)
-
-Greg Young — "The Art of Destroying Software" (новый взгляд на архитектуру)
-
-John Hughes — "Testing the Hard Stuff" (новый подход к тестированию)
-
-День 8-30: Структура
-Серия выступлений по DDD от Vaughn Vernon
-
-Event Storming workshop от Alberto Brandolini
-
-Mike Acton — "Data-Oriented Design" (производительность)
-
-День 31-90: Глубина
-Edward Kmett — лекции по продвинутому Haskell
-
-Jon Gjengset — продвинутый Rust на практике
-
-Jonas Bonér — реактивные системы
-
-Предупреждение (по вашим аспектам):
-Опасность Нептуна ретроградного:
-Вы можете уйти в "вечное изучение", никогда не начиная делать.
-
-Решение: После каждого 3-го просмотренного выступления — 1 день практики.
-
-Опасность Козерога:
-Создадите слишком жёсткую систему, которая не адаптируется.
-
-Решение: Оставляйте 20% системы "неструктурированными" для адаптации.
-
-Опасность Плутона:
-Углубитесь в одну технологию, игнорируя остальные.
-
-Решение: Цикл 3 недели погружения → 1 неделя обзора смежных областей.
-
-Опасность Близнецов:
-Переключитесь между слишком многими технологиями.
-
-Решение: Фокус на одной парадигме (EDA) на 6 месяцев.
-
-Итоговая рекомендация:
-Начните с: Greg Young + Alberto Brandolini + Scott Wlaschin
-Это даст: EDA/DDD (структура) + PBT (тестирование свойств)
-
-Потом добавьте: Mike Acton + Jon Gjengset
-Это даст: DOD (производительность) + Rust (системное программирование)
-
-Для интеграции: Rich Hickey + John Hughes
-Это даст: Глубинное понимание + новые подходы к тестированию
-
-Ваш уникальный стек спикеров отразит вашу карту: структура (Козерог) + глубина (Плутон) + коммуникация (Близнецы) + интуиция (Нептун ретроградный).
-
-https://youtu.be/srQt1NAHYC0
+curl -X POST \
+  "https://relits.bitrix24.ru/rest/336/9xuqnmbu879m3zg3/im.message.add" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "DIALOG_ID": "296",
+    "MESSAGE": "Привет! Это тестовое сообщение"
+  }'
+
+
+curl -X POST \
+-H "Content-Type: application/json" \
+-H "Accept: application/json" \
+-d '{DIALOG_ID: "chat5",MESSAGE: "Сообщение [B]с вложением[/B] цвета primary и поддержкой [I]bb-кодов[/I]",ATTACH: [{MESSAGE: "API будет доступно в обновлении [B]im 24.0.0[/B]"}]}' \
+https://relits.bitrix24.ru/rest/336/9xuqnmbu879m3zg3//im.message.add
+
+
+СГМБ4 , Гранд4 газовые счетчики
+
+
+curl -X POST \
+-H "Content-Type: application/json" \
+-H "Accept: application/json" \
+-d '{}' \
+https://relits.bitrix24.ru/rest/336/eablzesyagwz5bbx/task.item.list
+
+
+curl -X POST \
+-H "Content-Type: application/json" \
+-H "Accept: application/json" \
+-d '{"order":{"DEADLINE":"asc","PRIORITY":"desc"},"select":["ID","TITLE","DESCRIPTION","STATUS","subStatus","DEADLINE","CREATED_DATE","RESPONSIBLE_ID","ACCOMPLICES","AUDITORS","TAGS","COUNTERS","PRIORITY","MARK"],"params":{"WITH_TIMER_INFO":true,"WITH_RESULT_INFO":true,"WITH_PARSED_DESCRIPTION":true}}' \
+https://relits.bitrix24.ru/rest/336/eablzesyagwz5bbx/tasks.task.list
+
+
+
+curl -X POST \
+-H "Content-Type: application/json" \
+-H "Accept: application/json" \
+-d '{"order":{"DEADLINE":"asc","PRIORITY":"desc"},"select":["ID","TITLE","DESCRIPTION","STATUS","subStatus","DEADLINE","CREATED_DATE","RESPONSIBLE_ID","ACCOMPLICES","AUDITORS","TAGS","COUNTERS","PRIORITY","MARK"],"params":{"WITH_TIMER_INFO":true,"WITH_RESULT_INFO":true,"WITH_PARSED_DESCRIPTION":true}}' \
+https://relits.bitrix24.ru/rest/336/eablzesyagwz5bbx/tasks.task.list
+
+
+Базовый скрипт для выгрузки всех задач
+bash
+#!/bin/bash
+
+# Настройки
+WEBHOOK_URL="https://ваш-портал.bitrix24.ru/rest/1/ваш-токен/"
+USER_ID="123" # Ваш ID пользователя в Bitrix24
+OUTPUT_FILE="bitrix_tasks_$(date +%Y%m%d_%H%M%S).json"
+
+# Функция для выполнения запросов
+bitrix_request() {
+    local method=$1
+    local data=$2
+    
+    curl -s -X POST "${WEBHOOK_URL}${method}" \
+        -H "Content-Type: application/json" \
+        -d "$data"
+}
+
+echo "Начинаем выгрузку задач..."
+
+# 1. Получаем задачи где вы исполнитель
+echo "Получаем задачи где вы исполнитель..."
+RESPONSIBLE_TASKS=$(bitrix_request "tasks.task.list" '{
+    "filter": {
+        "RESPONSIBLE_ID": '$USER_ID'
+    },
+    "select": ["*", "UF_*", "TAGS"],
+    "order": {"ID": "DESC"}
+}')
+
+# 2. Получаем задачи где вы соисполнитель
+echo "Получаем задачи где вы соисполнитель..."
+ACCOMPLICE_TASKS=$(bitrix_request "tasks.task.list" '{
+    "filter": {
+        "ACCOMPLICE": '$USER_ID'
+    },
+    "select": ["*", "UF_*", "TAGS"],
+    "order": {"ID": "DESC"}
+}')
+
+# Парсим результаты
+RESPONSIBLE_TASKS_IDS=$(echo $RESPONSIBLE_TASKS | jq -r '.result.tasks[]?.id' | tr '\n' ',')
+ACCOMPLICE_TASKS_IDS=$(echo $ACCOMPLICE_TASKS | jq -r '.result.tasks[]?.id' | tr '\n' ',')
+
+echo "Найдено задач как исполнитель: $(echo $RESPONSIBLE_TASKS_IDS | tr ',' '\n' | grep -c .)"
+echo "Найдено задач как соисполнитель: $(echo $ACCOMPLICE_TASKS_IDS | tr ',' '\n' | grep -c .)"
+
+# Объединяем ID задач
+ALL_TASK_IDS=$(echo "$RESPONSIBLE_TASKS_IDS,$ACCOMPLICE_TASKS_IDS" | tr ',' '\n' | sort -u | grep -v '^$' | tr '\n' ',' | sed 's/,$//')
+
+echo "Всего уникальных задач: $(echo $ALL_TASK_IDS | tr ',' '\n' | wc -l)"
+2. Полная выгрузка с комментариями
+bash
+#!/bin/bash
+
+# Настройки
+WEBHOOK="https://ваш-портал.bitrix24.ru/rest/1/ваш-токен/"
+USER_ID="123"
+OUTPUT_FILE="bitrix_tasks_full_$(date +%Y%m%d_%H%M%S).json"
+TEMP_DIR="/tmp/bitrix_export_$(date +%s)"
+
+# Создаем временную директорию
+mkdir -p "$TEMP_DIR"
+
+echo "=== Выгрузка задач из Bitrix24 ==="
+echo "Вебхук: $(echo $WEBHOOK | cut -d'/' -f3)"
+echo "User ID: $USER_ID"
+echo "Время начала: $(date)"
+echo ""
+
+# 1. Получаем список всех задач (пакетный запрос)
+echo "1. Получаем список задач..."
+BATCH_DATA='{
+    "halt": 0,
+    "cmd": {
+        "responsible": "tasks.task.list?filter[RESPONSIBLE_ID]='$USER_ID'&select[]=*&select[]=UF_*&select[]=TAGS",
+        "accomplice": "tasks.task.list?filter[ACCOMPLICE]='$USER_ID'&select[]=*&select[]=UF_*&select[]=TAGS"
+    }
+}'
+
+curl -s -X POST "${WEBHOOK}batch" \
+    -H "Content-Type: application/json" \
+    -d "$BATCH_DATA" > "$TEMP_DIR/tasks_batch.json"
+
+echo "Пакетный запрос выполнен"
+
+# 2. Извлекаем ID всех задач
+RESPONSIBLE_TASKS=$(jq -r '.result.result.responsible.tasks[]?.id' "$TEMP_DIR/tasks_batch.json" 2>/dev/null || echo "")
+ACCOMPLICE_TASKS=$(jq -r '.result.result.accomplice.tasks[]?.id' "$TEMP_DIR/tasks_batch.json" 2>/dev/null || echo "")
+
+# Объединяем и убираем дубликаты
+ALL_TASK_IDS=$(echo -e "$RESPONSIBLE_TASKS\n$ACCOMPLICE_TASKS" | sort -u | grep -v '^$')
+
+TASK_COUNT=$(echo "$ALL_TASK_IDS" | wc -l)
+echo "2. Найдено задач: $TASK_COUNT"
+
+if [ $TASK_COUNT -eq 0 ]; then
+    echo "Нет задач для выгрузки"
+    exit 0
+fi
+
+# 3. Получаем полную информацию по каждой задаче
+echo "3. Получаем детальную информацию по задачам..."
+TASK_DETAILS="[]"
+counter=0
+
+for TASK_ID in $ALL_TASK_IDS; do
+    counter=$((counter + 1))
+    echo "  [$counter/$TASK_COUNT] Обрабатываю задачу #$TASK_ID"
+    
+    # Получаем детали задачи
+    TASK_DETAIL=$(curl -s -X POST "${WEBHOOK}tasks.task.get" \
+        -H "Content-Type: application/json" \
+        -d '{"taskId": '$TASK_ID', "select": ["*", "UF_*", "TAGS"]}')
+    
+    # Получаем комментарии
+    COMMENTS=$(curl -s -X POST "${WEBHOOK}task.commentitem.getlist" \
+        -H "Content-Type: application/json" \
+        -d '{"taskId": '$TASK_ID', "select": ["*", "USER", "FILES"]}')
+    
+    # Получаем информацию об участниках
+    TASK_DATA=$(echo $TASK_DETAIL | jq -r '.result.task')
+    if [ -n "$TASK_DATA" ] && [ "$TASK_DATA" != "null" ]; then
+        # Извлекаем ID участников
+        PARTICIPANTS_IDS=""
+        if echo $TASK_DATA | jq -e '.responsibleId' >/dev/null 2>&1; then
+            PARTICIPANTS_IDS="$PARTICIPANTS_IDS $(echo $TASK_DATA | jq -r '.responsibleId')"
+        fi
+        
+        if echo $TASK_DATA | jq -e '.createdBy' >/dev/null 2>&1; then
+            PARTICIPANTS_IDS="$PARTICIPANTS_IDS $(echo $TASK_DATA | jq -r '.createdBy')"
+        fi
+        
+        if echo $TASK_DATA | jq -e '.accomplices[]?' >/dev/null 2>&1; then
+            PARTICIPANTS_IDS="$PARTICIPANTS_IDS $(echo $TASK_DATA | jq -r '.accomplices[]?')"
+        fi
+        
+        if echo $TASK_DATA | jq -e '.auditors[]?' >/dev/null 2>&1; then
+            PARTICIPANTS_IDS="$PARTICIPANTS_IDS $(echo $TASK_DATA | jq -r '.auditors[]?')"
+        fi
+        
+        # Получаем информацию об участниках
+        PARTICIPANTS_INFO="[]"
+        UNIQUE_IDS=$(echo $PARTICIPANTS_IDS | tr ' ' '\n' | sort -u | grep -v '^$')
+        
+        for USER_ID in $UNIQUE_IDS; do
+            USER_INFO=$(curl -s -X POST "${WEBHOOK}user.get" \
+                -H "Content-Type: application/json" \
+                -d '{"ID": "'$USER_ID'"}')
+            
+            if echo $USER_INFO | jq -e '.result[0]' >/dev/null 2>&1; then
+                USER_DATA=$(echo $USER_INFO | jq '.result[0] | {id: .ID, name: .NAME, lastName: .LAST_NAME, email: .EMAIL, work_position: .WORK_POSITION}')
+                PARTICIPANTS_INFO=$(echo $PARTICIPANTS_INFO | jq --argjson user "$USER_DATA" '. + [$user]')
+            fi
+        done
+        
+        # Формируем итоговый объект задачи
+        TASK_OBJECT=$(echo $TASK_DATA | jq --argjson comments "$(echo $COMMENTS | jq '.result // []')" \
+            --argjson participants "$PARTICIPANTS_INFO" \
+            '. + {comments: $comments, participants: $participants, comment_count: ($comments | length)}')
+        
+        TASK_DETAILS=$(echo $TASK_DETAILS | jq --argjson task "$TASK_OBJECT" '. + [$task]')
+    fi
+    
+    # Пауза чтобы не превысить лимиты API
+    sleep 0.5
+done
+
+# 4. Сохраняем результат
+echo "$TASK_DETAILS" | jq '.' > "$OUTPUT_FILE"
+
+echo ""
+echo "=== Выгрузка завершена ==="
+echo "Сохранено в: $OUTPUT_FILE"
+echo "Количество задач: $(jq '. | length' "$OUTPUT_FILE")"
+echo "Общий размер: $(du -h "$OUTPUT_FILE" | cut -f1)"
+echo "Время окончания: $(date)"
+3. Выгрузка в CSV формат
+bash
+#!/bin/bash
+
+WEBHOOK="https://ваш-портал.bitrix24.ru/rest/1/ваш-токен/"
+USER_ID="123"
+JSON_FILE="bitrix_tasks_$(date +%Y%m%d).json"
+CSV_FILE="bitrix_tasks_$(date +%Y%m%d).csv"
+
+# Получаем данные в JSON
+echo "Получаем данные задач..."
+curl -s -X POST "${WEBHOOK}batch" \
+    -H "Content-Type: application/json" \
+    -d '{
+        "halt": 0,
+        "cmd": {
+            "tasks_responsible": "tasks.task.list?filter[RESPONSIBLE_ID]='$USER_ID'&select[]=*",
+            "tasks_accomplice": "tasks.task.list?filter[ACCOMPLICE]='$USER_ID'&select[]=*"
+        }
+    }' > "$JSON_FILE"
+
+echo "Данные сохранены в $JSON_FILE"
+
+# Конвертируем в CSV (требуется jq)
+echo "ID,Название,Статус,Создана,Крайний срок,Ответственный,Комментариев" > "$CSV_FILE"
+
+jq -r '
+.result.result |
+(.tasks_responsible.tasks // []), (.tasks_accomplice.tasks // []) |
+.[] |
+[
+    .id,
+    .title,
+    .status,
+    .createdDate,
+    .deadline // "",
+    .responsibleId,
+    (.comments // [] | length)
+] | @csv' "$JSON_FILE" >> "$CSV_FILE"
+
+echo "CSV файл создан: $CSV_FILE"
+echo "Количество строк: $(wc -l < "$CSV_FILE")"
+4. Скрипт с пагинацией для большого количества задач
+bash
+#!/bin/bash
+
+WEBHOOK="https://ваш-портал.bitrix24.ru/rest/1/ваш-токен/"
+USER_ID="123"
+LIMIT=50 # Количество задач за один запрос
+ALL_TASKS_FILE="all_tasks.json"
+COMMENTS_FILE="tasks_with_comments.json"
+
+# Функция получения задач с пагинацией
+get_tasks_with_pagination() {
+    local filter_type=$1
+    local filter_value=$2
+    local all_tasks="[]"
+    local start=0
+    
+    echo "Получаем задачи (фильтр: $filter_type = $filter_value)"
+    
+    while true; do
+        echo "  Загрузка с позиции $start..."
+        
+        RESPONSE=$(curl -s -X POST "${WEBHOOK}tasks.task.list" \
+            -H "Content-Type: application/json" \
+            -d '{
+                "filter": {"'$filter_type'": '$filter_value'},
+                "select": ["*"],
+                "order": {"ID": "DESC"},
+                "start": '$start'
+            }')
+        
+        TASKS=$(echo $RESPONSE | jq -r '.result.tasks // []')
+        TASKS_COUNT=$(echo $TASKS | jq 'length')
+        
+        if [ "$TASKS_COUNT" -eq 0 ]; then
+            break
+        fi
+        
+        all_tasks=$(echo $all_tasks | jq --argjson new "$TASKS" '. + $new')
+        start=$((start + TASKS_COUNT))
+        
+        if [ "$TASKS_COUNT" -lt "$LIMIT" ]; then
+            break
+        fi
+        
+        sleep 1
+    done
+    
+    echo $all_tasks
+}
+
+# Основной скрипт
+echo "=== Начало выгрузки ==="
+
+# Получаем задачи как исполнитель
+RESPONSIBLE_TASKS=$(get_tasks_with_pagination "RESPONSIBLE_ID" "$USER_ID")
+RESP_COUNT=$(echo $RESPONSIBLE_TASKS | jq 'length')
+echo "Задач как исполнитель: $RESP_COUNT"
+
+# Получаем задачи как соисполнитель
+ACCOMPLICE_TASKS=$(get_tasks_with_pagination "ACCOMPLICE" "$USER_ID")
+ACC_COUNT=$(echo $ACCOMPLICE_TASKS | jq 'length')
+echo "Задач как соисполнитель: $ACC_COUNT"
+
+# Объединяем и удаляем дубликаты
+echo "Объединяем задачи..."
+ALL_TASKS_JSON=$(echo "[$RESPONSIBLE_TASKS,$ACCOMPLICE_TASKS]" | jq 'add | unique_by(.id)')
+TOTAL_COUNT=$(echo $ALL_TASKS_JSON | jq 'length')
+echo "Всего уникальных задач: $TOTAL_COUNT"
+
+# Сохраняем список задач
+echo $ALL_TASKS_JSON | jq '.' > "$ALL_TASKS_FILE"
+echo "Список задач сохранен в $ALL_TASKS_FILE"
+
+# Получаем комментарии для каждой задачи
+echo "Получаем комментарии..."
+FINAL_RESULT="[]"
+COUNTER=0
+
+echo $ALL_TASKS_JSON | jq -c '.[]' | while read TASK; do
+    COUNTER=$((COUNTER + 1))
+    TASK_ID=$(echo $TASK | jq -r '.id')
+    echo "[$COUNTER/$TOTAL_COUNT] Задача #$TASK_ID"
+    
+    # Получаем комментарии
+    COMMENTS_RESPONSE=$(curl -s -X POST "${WEBHOOK}task.commentitem.getlist" \
+        -H "Content-Type: application/json" \
+        -d '{"taskId": '$TASK_ID'}')
+    
+    COMMENTS=$(echo $COMMENTS_RESPONSE | jq '.result // []')
+    
+    # Обновляем задачу с комментариями
+    UPDATED_TASK=$(echo $TASK | jq --argjson comments "$COMMENTS" \
+        '. + {comments: $comments, comment_count: ($comments | length)}')
+    
+    # Добавляем в финальный результат
+    FINAL_RESULT=$(echo $FINAL_RESULT | jq --argjson task "$UPDATED_TASK" '. + [$task]')
+    
+    # Сохраняем промежуточный результат каждые 10 задач
+    if [ $((COUNTER % 10)) -eq 0 ]; then
+        echo $FINAL_RESULT | jq '.' > "$COMMENTS_FILE.tmp"
+        echo "  Промежуточное сохранение..."
+    fi
+    
+    sleep 0.3
+done
+
+# Сохраняем финальный результат
+echo $FINAL_RESULT | jq '.' > "$COMMENTS_FILE"
+
+echo ""
+echo "=== Выгрузка завершена ==="
+echo "Результаты сохранены в:"
+echo "  - $ALL_TASKS_FILE (список задач)"
+echo "  - $COMMENTS_FILE (задачи с комментариями)"
+echo "Общее количество задач с комментариями: $(jq 'length' "$COMMENTS_FILE")"
+5. Быстрая выгрузка через batch запросы
+bash
+#!/bin/bash
+
+WEBHOOK="https://ваш-портал.bitrix24.ru/rest/1/ваш-токен/"
+USER_ID="123"
+OUTPUT="tasks_export_$(date +%s).json"
+
+# Создаем batch запрос для получения всех данных
+echo "Создаем batch запрос..."
+
+# Сначала получаем ID всех задач
+BATCH_GET_TASKS='{
+    "halt": 0,
+    "cmd": {
+        "tasks_1": "tasks.task.list?filter[RESPONSIBLE_ID]='$USER_ID'&select[]=ID",
+        "tasks_2": "tasks.task.list?filter[ACCOMPLICE]='$USER_ID'&select[]=ID"
+    }
+}'
+
+echo "Выполняем запрос списка задач..."
+curl -s -X POST "${WEBHOOK}batch" \
+    -H "Content-Type: application/json" \
+    -d "$BATCH_GET_TASKS" > temp_tasks.json
+
+# Извлекаем ID
+TASK_IDS=$(jq -r '.result.result.tasks_1.tasks[].id, .result.result.tasks_2.tasks[].id' temp_tasks.json | sort -u)
+
+echo "Найдено задач: $(echo "$TASK_IDS" | wc -l)"
+
+# Создаем batch для получения деталей и комментариев
+BATCH_CMD="{}"
+counter=0
+
+for ID in $TASK_IDS; do
+    if [ -n "$ID" ]; then
+        counter=$((counter + 1))
+        BATCH_CMD=$(echo "$BATCH_CMD" | jq --arg cmd "tasks.task.get?taskId=$ID" \
+            --arg idx "task_$counter" '. + {($idx): $cmd}')
+        
+        if [ $counter -lt 50 ]; then # Ограничение batch
+            BATCH_CMD=$(echo "$BATCH_CMD" | jq --arg cmd "task.commentitem.getlist?taskId=$ID" \
+                --arg idx "comments_$counter" '. + {($idx): $cmd}')
+        fi
+    fi
+done
+
+# Выполняем batch запрос
+echo "Выполняем batch запрос для $counter задач..."
+BATCH_DATA='{"halt": 0, "cmd": '"$BATCH_CMD"'}'
+
+curl -s -X POST "${WEBHOOK}batch" \
+    -H "Content-Type: application/json" \
+    -d "$BATCH_DATA" | jq '.' > "$OUTPUT"
+
+echo "Готово! Результат в $OUTPUT"
+
+# Очистка
+rm -f temp_tasks.json
+6. Получение своего User ID через API
+bash
+#!/bin/bash
+
+WEBHOOK="https://ваш-портал.bitrix24.ru/rest/1/ваш-токен/"
+
+# Способ 1: Текущий пользователь
+echo "Получение ID текущего пользователя..."
+curl -s -X POST "${WEBHOOK}user.current" \
+    -H "Content-Type: application/json" \
+    -d '{}' | jq '.result.ID'
+
+# Способ 2: По email
+EMAIL="ваш-email@example.com"
+echo "Поиск ID по email $EMAIL..."
+curl -s -X POST "${WEBHOOK}user.search" \
+    -H "Content-Type: application/json" \
+    -d '{
+        "filter": {
+            "EMAIL": "'$EMAIL'"
+        },
+        "select": ["ID", "NAME", "LAST_NAME", "EMAIL"]
+    }' | jq '.result[0].ID'
+
+# Способ 3: Список всех пользователей
+echo "Список пользователей (первые 10):"
+curl -s -X POST "${WEBHOOK}user.get" \
+    -H "Content-Type: application/json" \
+    -d '{
+        "filter": {"ACTIVE": true},
+        "select": ["ID", "NAME", "LAST_NAME", "EMAIL"],
+        "limit": 10
+    }' | jq '.result[] | "\(.ID): \(.NAME) \(.LAST_NAME) (\(.EMAIL))"'
+Установка зависимостей (если нужно)
+bash
+# Для работы скриптов нужен jq
+sudo apt-get install jq  # Ubuntu/Debian
+# или
+brew install jq         # macOS
+# или
+yum install jq          # CentOS/RHEL
+Запуск скриптов
+bash
+# Сделать скрипт исполняемым
+chmod +x bitrix_export.sh
+
+# Запустить
+./bitrix_export.sh
+
+# Или сразу одной командой
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/ваш-репозиторий/bitrix_export.sh)"
+Эти скрипты покрывают все основные сценарии выгрузки задач с комментариями через cURL. Выберите подходящий вариант в зависимости от ваших потребностей и количества задач.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+https://restetris.cynteka.ru/core

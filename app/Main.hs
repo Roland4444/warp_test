@@ -57,9 +57,11 @@ import System.Directory (doesFileExist)
 import Network.HTTP.Types (status200, status404, hContentType, methodGet, methodPost)
 import Data.ByteString.Lazy.Char8 (pack)
 import Data.CaseInsensitive (original)
+import Lib (get_pass_via_email)
 
 main :: IO ()
 main = do
+    get_pass_via_email  "xxxx"
     putStrLn "WebSocket server running on ws://localhost:11111/"
     putStrLn "Open http://localhost:11111/ in your browser to test WebSocket connection"
     
