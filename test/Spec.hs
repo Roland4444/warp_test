@@ -1,8 +1,9 @@
 import Test.Hspec
-import Lib  (summ, get_pass_via_email)
+import Lib  (summ, get_pass_via_email, sub, cross, add, process_delta)
 
 main :: IO ()
 main = hspec $ describe "MyLib.add" $ do
+
   it "adds two numbers" $
     summ 1 2 `shouldBe` 3
 
@@ -11,6 +12,18 @@ main = hspec $ describe "MyLib.add" $ do
 
   it "xetarct pass" $
     get_pass_via_email "test@ya.ru" `shouldReturn` "123"
+
+  it "sub test" $
+    (sub [1, 2, 3] [1, 2])  `shouldBe` [3]
+
+  it "sub test str" $
+    (sub ["1", "2", "3"] ["1", "2"])  `shouldBe` ["3"]
+
+  it "sub test str555" $
+    (process_delta "MOBILE_NO.txt.old" "MOBILE_NO.txt")  `shouldReturn` 0  
+
+
+
 
 
 

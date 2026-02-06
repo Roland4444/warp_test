@@ -889,9 +889,20 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/ваш-репозито�
 
 
 
+https://relits.bitrix24.ru/rest/336/w1gzyqwhiipe1jph/
 
-
-
+curl -X POST \
+  'https://relits.bitrix24.ru/rest/336/w1gzyqwhiipe1jph/sonet_group.get.json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "filter": {
+      "PROJECT": "Y"
+    },
+    "order": {
+      "NAME": "ASC"
+    },
+    "select": ["ID", "NAME", "DESCRIPTION", "DATE_CREATE", "IMAGE_ID"]
+  }'
 
 
 
